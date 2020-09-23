@@ -13,7 +13,7 @@ def translate_sentence(sentence):
             current = ""
             current += sentence[i]
 
-            if current == " ":
+            if current.isalnum() != True:
                 words.append(current)
                 current = ""
 
