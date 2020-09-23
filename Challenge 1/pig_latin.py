@@ -6,6 +6,8 @@ def translate_sentence(sentence):
     for i in range(len(sentence)):
         if sentence[i].isalnum():
             current += sentence[i]
+            if i == len(sentence) - 1:
+                words.append(current)
         else:
             words.append(current)
             current = ""
@@ -17,7 +19,7 @@ def translate_sentence(sentence):
 
             elif i == len(sentence) - 1:
                 words.append(sentence[i])
-                
+
     modified = []
     for i in range(len(words)):
         modified.append(translate_word(words[i]))
