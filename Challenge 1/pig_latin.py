@@ -40,25 +40,23 @@ def translate_word(word):
     if word.isalpha() != True:
         return word
 
-    count = 0
-    while count < len(word) and word[0] not in vowels:
-        word = word[1:] + word[0]
-        count += 1
-    if count == 0 and word[0] in vowels:
+    i = 0
+    if i == 0 and word[0] in vowels:
         word += "yay"
+        return word
+    
+    while i < len(word) and word[0] not in vowels:
+        word = word[1:] + word[0]
+        i += 1
+        
+    if i == len(word):
+        return word
     else:
         word += "ay"
-    return word
+        return word
 
 def translate(eng_word):
     if eng_word.isalpha():
         return translate_word(eng_word)
 
     return translate_sentence(eng_word)
-
-
-print(translate("Do you like me?"))
-
-
-
-    
