@@ -23,12 +23,16 @@ def popping2(array):
             return
 
     i = 1
-    while i < len(array) - 1 :
+    while i < len(array) - 1:
+        #print(array)
+        
         if array[i] == array[i - 1]:
             array = array[:i-1] + array[i+1:]
+            #print(array)
             i = 1
         elif array[i] == array[i + 1]:
             array = array[:i] + array[i+2:]
+            #print(array)
             i = 1
         else:
             i += 1
@@ -36,6 +40,11 @@ def popping2(array):
         #print(len(array))
         #print(i)
         #print(array)
+
+    if len(array) == 2:
+        if array[0] == array[1]:
+            print([])
+            return
 
     print(array)
    
